@@ -20,6 +20,11 @@ namespace BinarySearchTree
             return root == null;
         }
 
+        public int Size()
+        {
+            return count;
+        }
+
         public void Add(T data)
         {
             if(root == null)
