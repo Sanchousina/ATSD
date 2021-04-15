@@ -10,5 +10,10 @@ namespace BinarySearchTree
         public Node<T> left { get; set; }
         public Node<T> right { get; set; }
 
+        public Node(T data)
+        {
+            this.data = data;
+        }
+
     }
 }
