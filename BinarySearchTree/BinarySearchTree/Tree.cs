@@ -28,6 +28,41 @@ namespace BinarySearchTree
             count++;
         }
 
+        public List<T> Preorder()
+        {         
+            if(root == null)
+            {
+                return new List<T>();
+            }
+
+            return Preorder(root);
+        }
+
         
+
+        private List<T> Preorder(Node<T> node)
+        {
+            List<T> list = new List<T>();
+
+            if(node != null)
+            {
+                list.Add(node.data);
+
+                if(node.left != null)
+                {
+                    list.AddRange(Preorder(node.left));
+                }
+
+                if(node.right != null)
+                {
+                    list.AddRange(Preorder(node.right));
+                }
+            }
+            return list;
+        }
+
+       
+
+
     }
 }

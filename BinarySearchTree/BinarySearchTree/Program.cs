@@ -14,6 +14,11 @@ namespace BinarySearchTree
             tree.Add(0);
             tree.Add(7);
             tree.Add(9);
+
+            foreach(var item in tree.Preorder())
+            {
+                Console.Write(item + " ");
+            }
         }
     }
 }
