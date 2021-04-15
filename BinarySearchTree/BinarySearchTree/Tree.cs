@@ -15,6 +15,11 @@ namespace BinarySearchTree
             count = 0;
         }
 
+        public bool isEmpty()
+        {
+            return root == null;
+        }
+
         public void Add(T data)
         {
             if(root == null)

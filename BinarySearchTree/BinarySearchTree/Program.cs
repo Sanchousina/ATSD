@@ -35,6 +35,8 @@ namespace BinarySearchTree
             }
 
             Console.WriteLine();
+
+            Console.WriteLine(tree.isEmpty());
         }
     }
 }
