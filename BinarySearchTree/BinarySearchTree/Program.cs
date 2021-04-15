@@ -15,29 +15,25 @@ namespace BinarySearchTree
             tree.Add(7);
             tree.Add(9);
 
-            foreach(var item in tree.Preorder())
-            {
-                Console.Write(item + " ");
-            }
-
-            Console.WriteLine();
-
-            /*foreach (var item in tree.Postorder())
-            {
-                Console.Write(item + " ");
-            }
-
-            Console.WriteLine();
+        
+            
 
             foreach (var item in tree.Inorder())
             {
                 Console.Write(item + " ");
             }
 
-            Console.WriteLine();*/
+            Console.WriteLine();
 
-            Console.WriteLine(tree.Search(0));
-            Console.WriteLine(tree.Search(10));
+            tree.Delete(4);
+
+
+            foreach (var item in tree.Inorder())
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine();
         }
     }
 }

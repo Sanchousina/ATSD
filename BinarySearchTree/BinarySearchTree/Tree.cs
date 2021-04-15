@@ -157,5 +157,38 @@ namespace BinarySearchTree
             }
             return list;
         }
+
+        public void Delete(T data)
+        {
+            root = Delete(root, data);
+        }
+
+        private Node<T> Delete (Node<T> node, T data)
+        {
+            if(root == null)
+            {
+                return root;
+            }
+            if(data.CompareTo(node.data) == -1)
+            {
+                node.left = Delete(node.left, data);
+            }
+            else if(data.CompareTo(node.data) == 1)
+            {
+                node.right = Delete(node.right, data);
+            }
+            else
+            {
+                if(node.left == null)
+                {
+                    return node.right;
+                }
+                else if(node.right == null)
+                {
+                    return node.left;
+                }
+            }
+            return node;
+        }
     }
 }
