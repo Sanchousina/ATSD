@@ -1,0 +1,13 @@
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.exe
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.deps.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.runtimeconfig.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.runtimeconfig.dev.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp3.1\BinarySearchTree.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.csprojAssemblyReference.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.AssemblyInfoInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.AssemblyInfo.cs
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.csproj.CoreCompileInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp3.1\BinarySearchTree.genruntimeconfig.cache

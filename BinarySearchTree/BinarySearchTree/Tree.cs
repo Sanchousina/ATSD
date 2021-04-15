@@ -14,5 +14,20 @@ namespace BinarySearchTree
             root = null;
             count = 0;
         }
+
+        public void Add(T data)
+        {
+            if(root == null)
+            {
+                root = new Node<T>(data);
+                count++;
+                return;
+            }
+
+            root.Add(data);
+            count++;
+        }
+
+        
     }
 }
