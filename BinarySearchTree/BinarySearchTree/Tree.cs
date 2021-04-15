@@ -25,6 +25,33 @@ namespace BinarySearchTree
             return count;
         }
 
+        public bool Search(T data)
+        {
+            if(root != null)
+            {
+                if (data.CompareTo(root.data) == 0) return true;
+                else return Search(root, data);
+            }
+            return false;
+        }
+
+        private bool Search(Node<T> node, T data)
+        {
+            if(node != null)
+            {
+                if (data.CompareTo(node.data) == 0) return true;
+                else if(data.CompareTo(node.data) == -1)
+                {
+                    return Search(node.left, data);
+                }
+                else
+                {
+                   return  Search(node.right, data);
+                }
+            }
+            return false;
+        }
+
         public void Add(T data)
         {
             if(root == null)

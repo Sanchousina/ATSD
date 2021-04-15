@@ -22,7 +22,7 @@ namespace BinarySearchTree
 
             Console.WriteLine();
 
-            foreach (var item in tree.Postorder())
+            /*foreach (var item in tree.Postorder())
             {
                 Console.Write(item + " ");
             }
@@ -34,9 +34,10 @@ namespace BinarySearchTree
                 Console.Write(item + " ");
             }
 
-            Console.WriteLine();
+            Console.WriteLine();*/
 
-            Console.WriteLine(tree.isEmpty());
+            Console.WriteLine(tree.Search(0));
+            Console.WriteLine(tree.Search(10));
         }
     }
 }
