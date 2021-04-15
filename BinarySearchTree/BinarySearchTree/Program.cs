@@ -27,6 +27,14 @@ namespace BinarySearchTree
                 Console.Write(item + " ");
             }
 
+            Console.WriteLine();
+
+            foreach (var item in tree.Inorder())
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine();
         }
     }
 }

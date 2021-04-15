@@ -48,6 +48,16 @@ namespace BinarySearchTree
             return Postorder(root);
         }
 
+        public List<T> Inorder()
+        {
+            if (root == null)
+            {
+                return new List<T>();
+            }
+
+            return Inorder(root);
+        }
+
         private List<T> Preorder(Node<T> node)
         {
             List<T> list = new List<T>();
@@ -90,6 +100,25 @@ namespace BinarySearchTree
             return list;
         }
 
+        private List<T> Inorder(Node<T> node)
+        {
+            List<T> list = new List<T>();
 
+            if (node != null)
+            {
+                if (node.left != null)
+                {
+                    list.AddRange(Inorder(node.left));
+                }
+
+                list.Add(node.data);
+
+                if (node.right != null)
+                {
+                    list.AddRange(Inorder(node.right));
+                }
+            }
+            return list;
+        }
     }
 }
