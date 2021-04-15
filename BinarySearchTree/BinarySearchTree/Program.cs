@@ -19,6 +19,14 @@ namespace BinarySearchTree
             {
                 Console.Write(item + " ");
             }
+
+            Console.WriteLine();
+
+            foreach (var item in tree.Postorder())
+            {
+                Console.Write(item + " ");
+            }
+
         }
     }
 }
