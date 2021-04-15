@@ -9,5 +9,10 @@ namespace BinarySearchTree
         private Node<T> root;
         private int count;
 
+        public Tree()
+        {
+            root = null;
+            count = 0;
+        }
     }
 }
