@@ -232,6 +232,13 @@ namespace BinarySearchTree
         public int CountNode()
         {
             int res = 0;
+            res += CountNode(root);
+            res += CountNode(root.right);
+            return res;
+        }
+        private int CountNode(Node<T> root)
+        {
+            int res = 0;
             while(root.left != null)
             {
                 res += 1;
@@ -247,10 +254,17 @@ namespace BinarySearchTree
             int sum = 0;
             while(root.right != null)
             {
-                sum += Convert.ToInt32(root.right.data);
+                sum += Convert.ToInt32(root.right.data);   //????
                 root = root.right;
             }
             return sum;
+        }
+
+
+        //
+        public void DeleteEven()
+        {
+            
         }
     }
 }

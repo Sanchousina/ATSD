@@ -7,7 +7,7 @@ namespace BinarySearchTree
         static void Main(string[] args)
         {
             Tree<int> tree = new Tree<int>();
-            tree.Add(5);
+            tree.Add(6);
             tree.Add(1);
             tree.Add(8);
             tree.Add(4);
@@ -36,7 +36,10 @@ namespace BinarySearchTree
              Console.WriteLine();*/
 
             tree.PrintSorted();
-            Console.WriteLine(tree.SumKeys());
+
+            Console.WriteLine(tree.CountNode());
+            //tree.DeleteEven();
+            //tree.PrintSorted();
         }
     }
 }
