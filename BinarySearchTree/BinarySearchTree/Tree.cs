@@ -252,6 +252,13 @@ namespace BinarySearchTree
         public int SumKeys()
         {
             int sum = 0;
+            sum += SumKeys(root);
+            sum += SumKeys(root.left);
+            return sum;
+        }
+        private int SumKeys(Node<T> root)
+        {
+            int sum = 0;
             while(root.right != null)
             {
                 sum += Convert.ToInt32(root.right.data);   //????
