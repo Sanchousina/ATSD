@@ -15,6 +15,11 @@ namespace BinarySearchTree
             count = 0;
         }
 
+        public bool isFull()
+        {
+            return false;
+        }
+
         public bool isEmpty()
         {
             return root == null;
@@ -198,6 +203,11 @@ namespace BinarySearchTree
                 node = node.left;
             }
             return min;
+        }
+
+        public void PrintSorted()
+        {
+
         }
     }
 }
