@@ -192,14 +192,14 @@ namespace BinarySearchTree
                 if (root.left == null) return root.right;
                 else if (root.right == null) return root.left;
 
-                root.data = minValue(root.right);
+                root.data = minRightValue(root.right);
 
                 root.right = Delete(root.right, root.data);
             }
             return root;
         }
 
-        private T minValue(Node<T> node)
+        private T minRightValue(Node<T> node)
         {
             T min = node.data;
             while(node.left != null)
@@ -279,6 +279,51 @@ namespace BinarySearchTree
                     Delete(arr[i]);
                 }
             }
+        }
+
+
+        //It returns the tree key which is the nearest to the Valuemid = (keymin + keymax) / 2
+        public int FindMiddle()
+        {
+            int keymin = Convert.ToInt32(FindMin(root));
+            int keymax = Convert.ToInt32(FindMax(root));
+            int valuemid = (keymin + keymax) / 2;
+            
+            T[] arr = Inorder().ToArray();
+            int mid = Convert.ToInt32(arr[0]);
+            int temp = Math.Abs(Convert.ToInt32(arr[0]) - valuemid); 
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (Math.Abs(Convert.ToInt32(arr[i]) - valuemid) <= temp)
+                {
+                    temp = Math.Abs(Convert.ToInt32(arr[i]) - valuemid);
+                    mid = Convert.ToInt32(arr[i]);
+                }
+                
+            }
+            return mid;
+        }
+
+        private T FindMin(Node<T> root)
+        {
+            T min = root.data;
+            while(root.left != null)
+            {
+                min = root.left.data;
+                root = root.left;
+            }
+            return min;
+        }
+
+        private T FindMax(Node<T> root)
+        {
+            T max = root.data;
+            while (root.right != null)
+            {
+                max = root.right.data;
+                root = root.right;
+            }
+            return max;
         }
     }
 }

@@ -39,16 +39,9 @@ namespace BinarySearchTree
 
             //tree.deleteKey(1);
 
-           // Console.WriteLine(tree.SumKeys());
-            tree.DeleteEven();
-            tree.PrintSorted();
-
-            foreach (var item in tree.Preorder())
-            {
-                Console.Write(item + " ");
-            }
-
-            Console.WriteLine();
+            Console.WriteLine(tree.FindMiddle());
+           // tree.DeleteEven();
+            //tree.PrintSorted();
         }
     }
 }
