@@ -163,32 +163,41 @@ namespace BinarySearchTree
             root = Delete(root, data);
         }
 
-        private Node<T> Delete (Node<T> node, T data)
+        private Node<T> Delete (Node<T> root, T data)
         {
-            if(root == null)
+            if (root == null)
             {
                 return root;
             }
-            if(data.CompareTo(node.data) == -1)
+            if(data.CompareTo(root.data) == -1)
             {
-                node.left = Delete(node.left, data);
+                root.left = Delete(root.left, data);
             }
-            else if(data.CompareTo(node.data) == 1)
+            if (data.CompareTo(root.data) == 1)
             {
-                node.right = Delete(node.right, data);
+                root.right = Delete(root.right, data);
             }
             else
             {
-                if(node.left == null)
-                {
-                    return node.right;
-                }
-                else if(node.right == null)
-                {
-                    return node.left;
-                }
+                if (root.left == null) return root.right;
+                else if (root.right == null) return root.left;
+
+                root.data = minValue(root.right);
+
+                root.right = Delete(root.right, root.data);
             }
-            return node;
+            return root;
+        }
+
+        private T minValue(Node<T> node)
+        {
+            T min = node.data;
+            while(node.left != null)
+            {
+                min = node.left.data;
+                node = node.left;
+            }
+            return min;
         }
     }
 }

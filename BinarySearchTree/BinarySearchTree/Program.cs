@@ -18,17 +18,17 @@ namespace BinarySearchTree
         
             
 
-            foreach (var item in tree.Inorder())
+            foreach (var item in tree.Preorder())
             {
                 Console.Write(item + " ");
             }
 
             Console.WriteLine();
 
-            tree.Delete(4);
+            tree.Delete(5);
 
 
-            foreach (var item in tree.Inorder())
+            foreach (var item in tree.Preorder())
             {
                 Console.Write(item + " ");
             }
