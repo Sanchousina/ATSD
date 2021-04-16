@@ -20,6 +20,11 @@ namespace BinarySearchTree
             return false;
         }
 
+        public void MakeEmpty()
+        {
+            root = null;
+        }
+
         public bool isEmpty()
         {
             return root == null;
