@@ -36,7 +36,7 @@ namespace BinarySearchTree
              Console.WriteLine();*/
 
             tree.PrintSorted();
-            Console.WriteLine(tree.CountNode());
+            Console.WriteLine(tree.SumKeys());
         }
     }
 }

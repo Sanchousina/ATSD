@@ -224,6 +224,7 @@ namespace BinarySearchTree
             {
                 Console.Write(arr[i] + " ");
             }
+            Console.WriteLine();
         }
 
 
@@ -237,6 +238,19 @@ namespace BinarySearchTree
                 root = root.left;
             }
             return res;
+        }
+
+
+        //It finds the sum of keys in right son nodes in a BBST.
+        public int SumKeys()
+        {
+            int sum = 0;
+            while(root.right != null)
+            {
+                sum += Convert.ToInt32(root.right.data);
+                root = root.right;
+            }
+            return sum;
         }
     }
 }
