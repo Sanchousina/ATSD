@@ -173,17 +173,17 @@ namespace BinarySearchTree
             root = Delete(root, data);
         }
 
-        private Node<T> Delete (Node<T> root, T data)
+        private Node<T> Delete(Node<T> root, T data)
         {
             if (root == null)
             {
                 return root;
             }
-            if(data.CompareTo(root.data) == -1)
+            if (data.CompareTo(root.data) == -1)
             {
                 root.left = Delete(root.left, data);
             }
-            if (data.CompareTo(root.data) == 1)
+            else if (data.CompareTo(root.data) == 1)
             {
                 root.right = Delete(root.right, data);
             }
@@ -268,10 +268,17 @@ namespace BinarySearchTree
         }
 
 
-        //
+        //It deletes all even keys from a BBST
         public void DeleteEven()
         {
-            
+            T[] arr = Postorder().ToArray();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(!(Convert.ToInt32(arr[i])%2 == 0))
+                {
+                    Delete(arr[i]);
+                }
+            }
         }
     }
 }
