@@ -225,5 +225,18 @@ namespace BinarySearchTree
                 Console.Write(arr[i] + " ");
             }
         }
+
+
+        //It count the number of left son nodes in a BBST.
+        public int CountNode()
+        {
+            int res = 0;
+            while(root.left != null)
+            {
+                res += 1;
+                root = root.left;
+            }
+            return res;
+        }
     }
 }
