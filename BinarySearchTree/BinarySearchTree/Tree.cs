@@ -212,7 +212,18 @@ namespace BinarySearchTree
 
         public void PrintSorted()
         {
+            T[] arr= Inorder().ToArray();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
 
+            Array.Reverse(arr);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
         }
     }
 }
