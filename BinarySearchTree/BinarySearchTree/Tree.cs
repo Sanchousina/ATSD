@@ -233,17 +233,20 @@ namespace BinarySearchTree
         {
             int res = 0;
             res += CountNode(root);
-            res += CountNode(root.right);
             return res;
         }
-        private int CountNode(Node<T> root)
+        private int CountNode(Node<T> current,int res = 0)
         {
-            int res = 0;
-            while(root.left != null)
+            if(current != null)
             {
-                res += 1;
-                root = root.left;
+                if (current.left != null) res += 1;
+
+                if (current.right != null)
+                    res = CountNode(current.right, res);
+
+                res = CountNode(current.left, res);
             }
+          
             return res;
         }
 

@@ -13,7 +13,11 @@ namespace BinarySearchTree
             tree.Add(4);
             tree.Add(0);
             tree.Add(7);
+            tree.Add(10);
             tree.Add(9);
+            tree.Add(3);
+            tree.Add(5);
+            tree.Add(-2);
 
 
 
@@ -39,7 +43,7 @@ namespace BinarySearchTree
 
             //tree.deleteKey(1);
 
-            Console.WriteLine(tree.FindMiddle());
+            Console.WriteLine(tree.CountNode());
            // tree.DeleteEven();
             //tree.PrintSorted();
         }
