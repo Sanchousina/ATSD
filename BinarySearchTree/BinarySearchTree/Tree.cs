@@ -256,17 +256,21 @@ namespace BinarySearchTree
         {
             int sum = 0;
             sum += SumKeys(root);
-            sum += SumKeys(root.left);
             return sum;
         }
-        private int SumKeys(Node<T> root)
+        private int SumKeys(Node<T> current, int sum = 0)
         {
-            int sum = 0;
-            while(root.right != null)
+            if (current != null)
             {
-                sum += Convert.ToInt32(root.right.data);   //????
-                root = root.right;
+                if (current.right != null)
+                    sum += Convert.ToInt32(current.right.data);
+
+                if (current.left != null)
+                    sum = SumKeys(current.left, sum);
+
+                sum = SumKeys(current.right, sum);
             }
+
             return sum;
         }
 
