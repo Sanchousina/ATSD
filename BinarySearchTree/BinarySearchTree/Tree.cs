@@ -369,5 +369,19 @@ namespace BinarySearchTree
             }
             return newTree;
         }
+
+
+        //It inserts al keys of BBST2 into a BBST1
+        public void Insert(Tree<T> tree2)
+        {
+            T[] arr = tree2.Preorder().ToArray();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (!Search(arr[i]))
+                {
+                    Add(arr[i]);
+                }
+            }
+        }
     }
 }

@@ -20,25 +20,13 @@ namespace BinarySearchTree
             tree.Add(-2);
             tree.Add(12);
 
+            Tree<int> tree2 = new Tree<int>();
+            tree2.Add(2);
+            tree2.Add(-1);
+            tree2.Add(3);
+            tree2.Add(11);
 
-
-
-            /* foreach (var item in tree.Preorder())
-             {
-                 Console.Write(item + " ");
-             }
-
-             Console.WriteLine();
-
-             tree.Delete(5);
-
-
-             foreach (var item in tree.Preorder())
-             {
-                 Console.Write(item + " ");
-             }
-
-             Console.WriteLine();*/
+            tree2.PrintSorted();
 
             tree.PrintSorted();
 
@@ -47,19 +35,13 @@ namespace BinarySearchTree
             Console.WriteLine(tree.SecondLargest());
             // tree.DeleteEven();
             //tree.PrintSorted();
-            foreach (var item in tree.Preorder())
+
+            tree.Insert(tree2);
+            
+            foreach(var item in tree.Preorder())
             {
                 Console.Write(item + " ");
             }
-
-            Console.WriteLine();
-
-            Tree<int> tree2 = tree.Copy(tree);
-            foreach (var item in tree2.Preorder())
-            {
-                Console.Write(item + " ");
-            }
-
             Console.WriteLine();
         }
     }
