@@ -332,5 +332,29 @@ namespace BinarySearchTree
             }
             return max;
         }
+
+
+        //It returns the second largest key of a BBST without deleting it.
+        public int SecondLargest()
+        {
+            int res = SecondLargest(root);
+            return res;
+        }
+        private int SecondLargest(Node<T> current)
+        {
+            Node<T> secondMax = current;
+            Node<T> max = current.right;
+            while(max.right != null)
+            {
+                secondMax = max;
+                max = max.right;
+            }
+            if(max.left != null)
+            {
+                secondMax = max.left;
+            }
+
+            return Convert.ToInt32(secondMax.data);
+        }
     }
 }

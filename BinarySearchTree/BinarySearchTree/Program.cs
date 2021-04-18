@@ -18,6 +18,7 @@ namespace BinarySearchTree
             tree.Add(3);
             tree.Add(5);
             tree.Add(-2);
+            tree.Add(12);
 
 
 
@@ -43,7 +44,7 @@ namespace BinarySearchTree
 
             //tree.deleteKey(1);
 
-            Console.WriteLine(tree.SumKeys());
+            Console.WriteLine(tree.SecondLargest());
            // tree.DeleteEven();
             //tree.PrintSorted();
         }
