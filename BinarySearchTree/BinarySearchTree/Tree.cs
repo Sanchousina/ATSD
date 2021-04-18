@@ -383,5 +383,21 @@ namespace BinarySearchTree
                 }
             }
         }
+
+
+        //It determines if all keys of BBST2 are contained in BBST1. If so it returns true, otherwise false.
+        public bool Contains(Tree<T> tree2)
+        {
+            bool check = true;
+            T[] arr = tree2.Preorder().ToArray();
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (!Search(arr[i]))
+                    check = false;
+            }
+
+            return check;
+        }
     }
 }

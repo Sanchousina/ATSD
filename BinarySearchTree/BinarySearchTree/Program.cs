@@ -36,13 +36,15 @@ namespace BinarySearchTree
             // tree.DeleteEven();
             //tree.PrintSorted();
 
-            tree.Insert(tree2);
+            //tree.Insert(tree2);
+
+            Console.WriteLine(tree.Contains(tree2));
             
-            foreach(var item in tree.Preorder())
+          /*  foreach(var item in tree.Preorder())
             {
                 Console.Write(item + " ");
             }
-            Console.WriteLine();
+            Console.WriteLine();*/
         }
     }
 }
