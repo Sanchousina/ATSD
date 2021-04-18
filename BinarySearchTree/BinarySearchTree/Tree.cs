@@ -356,5 +356,18 @@ namespace BinarySearchTree
 
             return Convert.ToInt32(secondMax.data);
         }
+
+
+        //It creates and returns a copy of a given BBST.
+        public Tree<T> Copy(Tree<T> tree)
+        {
+            Tree<T> newTree = new Tree<T>();
+            T [] arr = tree.Preorder().ToArray();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                newTree.Add(arr[i]);
+            }
+            return newTree;
+        }
     }
 }

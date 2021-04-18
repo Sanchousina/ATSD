@@ -45,8 +45,22 @@ namespace BinarySearchTree
             //tree.deleteKey(1);
 
             Console.WriteLine(tree.SecondLargest());
-           // tree.DeleteEven();
+            // tree.DeleteEven();
             //tree.PrintSorted();
+            foreach (var item in tree.Preorder())
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine();
+
+            Tree<int> tree2 = tree.Copy(tree);
+            foreach (var item in tree2.Preorder())
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine();
         }
     }
 }
