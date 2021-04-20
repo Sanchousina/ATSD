@@ -424,5 +424,22 @@ namespace BinarySearchTree
             else
                 return Height(root.right) + 1;
         }
+
+
+        private Node<T> RightRotation(Node<T> root)
+        {
+            if(root.left != null)
+            {
+                Node<T> newRoot = root.left;
+                root.left = newRoot.right;
+                newRoot.right = root;
+                return root;
+            }
+            else
+            {
+                Console.Write("\nThere is no left subtree of given node,so right rotation can not be done!\n");
+                return null;
+            }
+        }
     }
 }
