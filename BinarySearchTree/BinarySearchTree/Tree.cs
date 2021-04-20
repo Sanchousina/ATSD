@@ -399,5 +399,30 @@ namespace BinarySearchTree
 
             return check;
         }
+
+
+        //It returns true if the calling object is a balanced binary search tree, otherwise false.
+        public bool isBalanced()
+        {
+            return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
+        }
+
+        private int Height(Node<T> root)
+        {
+            if (root == null)
+            { 
+                return -1; 
+            }
+            if (root.left == null && root.right == null)
+            { 
+                return 0;
+            }
+            else if (root.right == null || Height(root.left) > Height(root.right))
+            {
+                return Height(root.left) + 1;
+            }
+            else
+                return Height(root.right) + 1;
+        }
     }
 }

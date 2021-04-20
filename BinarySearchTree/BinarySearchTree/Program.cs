@@ -24,7 +24,8 @@ namespace BinarySearchTree
             tree2.Add(2);
             tree2.Add(-1);
             tree2.Add(3);
-            tree2.Add(11);
+            tree2.Add(6);
+            tree2.Add(8);
 
             tree2.PrintSorted();
 
@@ -39,12 +40,15 @@ namespace BinarySearchTree
             //tree.Insert(tree2);
 
             Console.WriteLine(tree.Contains(tree2));
-            
-          /*  foreach(var item in tree.Preorder())
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();*/
+
+            /*  foreach(var item in tree.Preorder())
+              {
+                  Console.Write(item + " ");
+              }
+              Console.WriteLine();*/
+
+
+            Console.WriteLine(tree.isBalanced());
         }
     }
 }
