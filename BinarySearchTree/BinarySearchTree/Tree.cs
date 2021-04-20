@@ -464,5 +464,12 @@ namespace BinarySearchTree
             root = RightRotation(root);
             return root;
         }
+
+        private Node<T> RightLeftRotation(Node<T> root)
+        {
+            root.right = RightRotation(root.right);
+            root = LeftRotation(root);
+            return root;
+        }
     }
 }
