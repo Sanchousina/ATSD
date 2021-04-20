@@ -441,5 +441,21 @@ namespace BinarySearchTree
                 return null;
             }
         }
+
+        private Node<T> LeftRotation(Node<T> root)
+        {
+            if (root.right != null)
+            {
+                Node<T> newRoot = root.right;
+                root.right = newRoot.left;
+                newRoot.left = root;
+                return root;
+            }
+            else
+            {
+                Console.Write("\nThere is no right subtree of given node,so left rotation can not be done!\n");
+                return null;
+            }
+        }
     }
 }
