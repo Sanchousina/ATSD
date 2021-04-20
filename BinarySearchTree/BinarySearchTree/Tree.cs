@@ -457,5 +457,12 @@ namespace BinarySearchTree
                 return null;
             }
         }
+
+        private Node<T> LeftRightRotation(Node<T> root)
+        {
+            root.left = LeftRotation(root.left);
+            root = RightRotation(root);
+            return root;
+        }
     }
 }
