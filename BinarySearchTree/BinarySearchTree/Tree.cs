@@ -471,5 +471,29 @@ namespace BinarySearchTree
             root = LeftRotation(root);
             return root;
         }
+
+
+        public Node<T> Balance(Node<T> root)
+        {
+            if (isBalanced())
+            {
+                Console.WriteLine("The tree is already balanced");
+                return root;
+            }
+              else  if (Height(root.right) > Height(root.left))
+                {
+                    if (root.right.right != null)
+                        return LeftRotation(root);
+                    else
+                        return RightLeftRotation(root);                   
+                }
+                else
+                {
+                    if (root.left.left != null)                
+                        return RightRotation(root);                   
+                    else
+                        return LeftRightRotation(root);                    
+                }
+        }
     }
 }
