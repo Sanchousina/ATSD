@@ -13,13 +13,13 @@ namespace BinarySearchTree
             tree.Add(3);
             tree.Add(0);
 
-
+/*
             Tree<int> tree2 = new Tree<int>();
             tree2.Add(3);
             tree2.Add(2);
             tree2.Add(5);
             tree2.Add(0);
-            tree2.Add(6);
+            tree2.Add(6);*/
 
 
             /* tree2.PrintSorted();
@@ -42,7 +42,7 @@ namespace BinarySearchTree
             }
             Console.WriteLine();
 
-            //Tree<int> tree2 = tree.Copy(tree);
+            Tree<int> tree2 = tree.Copy(tree);
 
             foreach (var item in tree2.Preorder())
             {

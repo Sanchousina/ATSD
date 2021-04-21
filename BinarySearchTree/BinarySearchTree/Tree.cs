@@ -446,26 +446,18 @@ namespace BinarySearchTree
         //( if tree shapes and corresponding keys are the same). Otherwise it returns false.
         public bool Equals(Tree<T> tree1, Tree<T> tree2)
         {
-            bool check = true;
-            if(tree1.count == tree2.count)
-            {
-                T[] arr1 = tree1.Preorder().ToArray();
-                T[] arr2 = tree2.Preorder().ToArray();
-
-                for(int i = 0; i < arr1.Length; i++)
-                {
-                    if(!(arr1[i].CompareTo(arr2[i]) == 0))
-                    {
-                        check = false;
-                    }
-                }
-            }
-            else
-            {
-                check = false;
-            }
-            return check;
+            return (tree1.root == tree2.root);
         }
+
+
+
+        //It creates and returns a new BBST which is symmetrical to the original one
+        public Tree<T> Symmetrical(Tree<T> tree)
+        {
+            return tree;
+        }
+
+
 
         // methods for AVL tree
         private bool isBalanced(Node<T> root)
