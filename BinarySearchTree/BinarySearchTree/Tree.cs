@@ -397,11 +397,10 @@ namespace BinarySearchTree
         public Tree<T> Copy(Tree<T> tree)
         {
             Tree<T> newTree = new Tree<T>();
-            T [] arr = tree.Preorder().ToArray();
-            for(int i = 0; i < arr.Length; i++)
-            {
-                newTree.Add(arr[i]);
-            }
+
+            newTree.root = tree.root;
+            newTree.count = tree.count;
+
             return newTree;
         }
 
@@ -443,10 +442,37 @@ namespace BinarySearchTree
         }
 
 
+        //It returns true if two BBSTs are equal
+        //( if tree shapes and corresponding keys are the same). Otherwise it returns false.
+        public bool Equals(Tree<T> tree1, Tree<T> tree2)
+        {
+            bool check = true;
+            if(tree1.count == tree2.count)
+            {
+                T[] arr1 = tree1.Preorder().ToArray();
+                T[] arr2 = tree2.Preorder().ToArray();
+
+                for(int i = 0; i < arr1.Length; i++)
+                {
+                    if(!(arr1[i].CompareTo(arr2[i]) == 0))
+                    {
+                        check = false;
+                    }
+                }
+            }
+            else
+            {
+                check = false;
+            }
+            return check;
+        }
+
+        // methods for AVL tree
         private bool isBalanced(Node<T> root)
         {
             return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
         }
+
 
         private int Height(Node<T> root)
         {
@@ -483,6 +509,7 @@ namespace BinarySearchTree
             }
         }
 
+
         private Node<T> LeftRotation(Node<T> root)
         {
             if (root.right != null)
@@ -499,12 +526,14 @@ namespace BinarySearchTree
             }
         }
 
+
         private Node<T> LeftRightRotation(Node<T> root)
         {
             root.left = LeftRotation(root.left);
             root = RightRotation(root);
             return root;
         }
+
 
         private Node<T> RightLeftRotation(Node<T> root)
         {
