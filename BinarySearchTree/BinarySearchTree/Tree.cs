@@ -23,6 +23,7 @@ namespace BinarySearchTree
         public void MakeEmpty()
         {
             root = null;
+            count = 0;
         }
 
         public bool isEmpty()
@@ -62,17 +63,49 @@ namespace BinarySearchTree
             return false;
         }
 
+        /* public void Add(T data)
+         {
+             if (root == null)
+             {
+                 root = new Node<T>(data);
+                 count++;
+                 return;
+             }
+
+             root.Add(data);
+             count++;
+         }*/
+
         public void Add(T data)
         {
-            if(root == null)
+            if (!Search(data))
             {
-                root = new Node<T>(data);
+                root = addRec(data, root);
                 count++;
-                return;
+            }
+            else
+            {
+                Console.WriteLine(data + " already exists in the tree, so it can not be added");
+            }
+        }
+
+        private Node<T> addRec(T data, Node<T> p)
+        {
+            if (p == null)
+            {
+                p = new Node<T>(data);
+            }
+            else if (data.CompareTo(p.data) == -1)
+            {
+                p.left = addRec(data, p.left);
+            }
+            else
+            {
+                p.right = addRec(data, p.right);
             }
 
-            root.Add(data);
-            count++;
+            p = Balance(p);
+            return p;
         }
 
         public List<T> Preorder()
@@ -227,6 +260,8 @@ namespace BinarySearchTree
             Console.WriteLine();
         }
 
+
+        //extra tasks
 
         //It count the number of left son nodes in a BBST.
         public int CountNode()
@@ -407,6 +442,12 @@ namespace BinarySearchTree
             return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
         }
 
+
+        private bool isBalanced(Node<T> root)
+        {
+            return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
+        }
+
         private int Height(Node<T> root)
         {
             if (root == null)
@@ -433,7 +474,7 @@ namespace BinarySearchTree
                 Node<T> newRoot = root.left;
                 root.left = newRoot.right;
                 newRoot.right = root;
-                return root;
+                return newRoot;
             }
             else
             {
@@ -449,7 +490,7 @@ namespace BinarySearchTree
                 Node<T> newRoot = root.right;
                 root.right = newRoot.left;
                 newRoot.left = root;
-                return root;
+                return newRoot;
             }
             else
             {
@@ -475,9 +516,9 @@ namespace BinarySearchTree
 
         public Node<T> Balance(Node<T> root)
         {
-            if (isBalanced())
+            if (isBalanced(root))
             {
-                Console.WriteLine("The tree is already balanced");
+                //Console.WriteLine("The tree is already balanced");
                 return root;
             }
               else  if (Height(root.right) > Height(root.left))

@@ -15,13 +15,13 @@ namespace BinarySearchTree
             this.data = data;
         }
 
-        public void Add(T data)
+       /* public void Add(T data)
         {
             Node<T> node = new Node<T>(data);
-            
-            if(node.data.CompareTo(this.data) == -1)
+
+            if (node.data.CompareTo(this.data) == -1)
             {
-                if(left == null)
+                if (left == null)
                 {
                     left = node;
                 }
@@ -32,7 +32,7 @@ namespace BinarySearchTree
             }
             else
             {
-                if(right == null)
+                if (right == null)
                 {
                     right = node;
                 }
@@ -41,8 +41,7 @@ namespace BinarySearchTree
                     right.Add(data);
                 }
             }
-
-        }
+        }*/
 
     }
 }
