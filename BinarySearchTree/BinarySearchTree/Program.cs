@@ -6,19 +6,21 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
-            /* Tree<int> tree = new Tree<int>();
-             tree.Add(5);
-             tree.Add(2);
-             tree.Add(6);
-             tree.Add(3);
-             tree.Add(0);*/
-            /*
-              Tree<int> tree2 = new Tree<int>();
-              tree2.Add(3);
-              tree2.Add(2);
-              tree2.Add(5);
-              tree2.Add(0);
-              tree2.Add(6);*/
+           /* Tree<int> tree = new Tree<int>();
+            tree.Add(5);
+            tree.Add(2);
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(0);*/
+
+
+
+            /* Tree<int> tree2 = new Tree<int>();
+             tree2.Add(3);
+             tree2.Add(2);
+             tree2.Add(5);
+             tree2.Add(0);
+             tree2.Add(6);*/
 
 
             /* tree2.PrintSorted();
@@ -79,13 +81,17 @@ namespace BinarySearchTree
             }
             Console.WriteLine();
 
-            Tree<int> symmetric = original.Symmetrical(original);
+            Tree<int> symmetric = original.Symmetrical();
 
             foreach (var item in symmetric.Preorder())
             {
                 Console.Write(item + " ");
             }
             Console.WriteLine();
+
+            Console.WriteLine("The Father node of {0} is {1}", 9, original.FatherNode(9));
+
+            //Console.WriteLine(original.Search(7));
         }
     }
 }

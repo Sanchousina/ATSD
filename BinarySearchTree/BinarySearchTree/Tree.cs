@@ -50,7 +50,8 @@ namespace BinarySearchTree
         {
             if(node != null)
             {
-                if (data.CompareTo(node.data) == 0) return true;
+                if (data.CompareTo(node.data) == 0) 
+                    return true;
                 else if(data.CompareTo(node.data) == -1)
                 {
                     return Search(node.left, data);
@@ -62,19 +63,6 @@ namespace BinarySearchTree
             }
             return false;
         }
-
-        /* public void Add(T data)
-         {
-             if (root == null)
-             {
-                 root = new Node<T>(data);
-                 count++;
-                 return;
-             }
-
-             root.Add(data);
-             count++;
-         }*/
 
         public void Add(T data)
         {
@@ -262,9 +250,7 @@ namespace BinarySearchTree
             Console.WriteLine();
         }
 
-
         //extra tasks
-
         //It count the number of left son nodes in a BBST.
         public int CountNode()
         {
@@ -286,7 +272,6 @@ namespace BinarySearchTree
           
             return res;
         }
-
 
         //It finds the sum of keys in right son nodes in a BBST.
         public int SumKeys()
@@ -311,7 +296,6 @@ namespace BinarySearchTree
             return sum;
         }
 
-
         //It deletes all even keys from a BBST
         public void DeleteEven()
         {
@@ -324,7 +308,6 @@ namespace BinarySearchTree
                 }
             }
         }
-
 
         //It returns the tree key which is the nearest to the Valuemid = (keymin + keymax) / 2
         public int FindMiddle()
@@ -370,7 +353,6 @@ namespace BinarySearchTree
             return max;
         }
 
-
         //It returns the second largest key of a BBST without deleting it.
         public int SecondLargest()
         {
@@ -394,18 +376,17 @@ namespace BinarySearchTree
             return Convert.ToInt32(secondMax.data);
         }
 
-
         //It creates and returns a copy of a given BBST.
-        public Tree<T> Copy(Tree<T> tree)
-        {
+        public Tree<T> Copy()
+        { 
             Tree<T> newTree = new Tree<T>();
-
-            newTree.root = tree.root;
-            newTree.count = tree.count;
-
+            T[] arr = Preorder().ToArray();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                newTree.Add(arr[i]);
+            }
             return newTree;
         }
-
 
         //It inserts al keys of BBST2 into a BBST1
         public void Insert(Tree<T> tree2)
@@ -419,7 +400,6 @@ namespace BinarySearchTree
                 }
             }
         }
-
 
         //It determines if all keys of BBST2 are contained in BBST1. If so it returns true, otherwise false.
         public bool Contains(Tree<T> tree2)
@@ -436,13 +416,11 @@ namespace BinarySearchTree
             return check;
         }
 
-
         //It returns true if the calling object is a balanced binary search tree, otherwise false.
         public bool isBalanced()
         {
             return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
         }
-
 
         //It returns true if two BBSTs are equal
         //( if tree shapes and corresponding keys are the same). Otherwise it returns false.
@@ -451,61 +429,104 @@ namespace BinarySearchTree
             return (tree1.root == tree2.root);
         }
 
-
         //It creates and returns a new BBST which is symmetrical to the original one
-        public Tree<T> Symmetrical(Tree<T> tree)
+        // оригинальное дерево тоже меняется - исправить
+        public Tree<T> Symmetrical()
         {
-            Tree<T> newTree = new Tree<T>();
-            if(tree.root != null)
+            Tree<T> newTree = Copy();
+
+            if(newTree.root != null)
             {
-                newTree.root = SymmetricalRec(tree.root);
+                newTree.root = SymmetricalRec(newTree.root);
             }
             return newTree;
         }
 
-        private Node<T> SymmetricalRec(Node<T> root)
+        private Node<T> SymmetricalRec(Node<T> node)
         {
-            if(root != null)
+            if(node != null)
             {
-                if(root.left == null)
+                if(node.left == null)
                 {
-                    if(root.right == null)
-                        return root;
+                    if(node.right == null)
+                        return node;
                 }
-                 if(root.left != null)
+                 if(node.left != null)
                 {
-                    if (root.right == null)
+                    if (node.right == null)
                     {
-                        Node<T> temp = root.left;
-                        root.left = null;
-                        root.right = SymmetricalRec(temp);
+                        Node<T> temp = node.left;
+                        node.left = null;
+                        node.right = SymmetricalRec(temp);
                     }                      
                 }
-                 if(root.right != null)
+                 if(node.right != null)
                 {
-                    if (root.left == null)
+                    if (node.left == null)
                     {
-                        Node<T> temp = root.right;
-                        root.right = null;
-                        root.right = SymmetricalRec(temp);
+                        Node<T> temp = node.right;
+                        node.right = null;
+                        node.right = SymmetricalRec(temp);
                     }
                 }
-                if(root.left != null && root.right != null)
+                if(node.left != null && node.right != null)
                 {
-                    Node<T> temp = root.left;
-                    root.left = root.right;
-                    root.right = temp;
+                    Node<T> temp = node.left;
+                    node.left = node.right;
+                    node.right = temp;
 
-                    root.left = SymmetricalRec(root.left);
-                    root.right = SymmetricalRec(temp);
+                    node.left = SymmetricalRec(node.left);
+                    node.right = SymmetricalRec(temp);
                 }
 
-                return root;
+                return node;
             }
             else
             {
                 return null;
             }
+        }
+
+        //It returns the key of the father node for the node with the argument key,
+        //if the argument key belongs to the calling tree object, otherwise it returns -10000.     
+        public T FatherNode(T data)
+        {
+            if (!Search(data))
+            {
+                Console.WriteLine("There is no such node in this tree");
+                return default(T);
+            }
+            else
+                return FatherNodeRec(data, root).data;
+        }
+
+        private Node<T> FatherNodeRec(T data, Node<T> root)
+        {
+            Node<T> parent = null;
+
+            if(root.left != null)
+            {
+                if(root.left.data.CompareTo(data) == 0)
+                {
+                    parent = root;
+                    return parent;
+                }
+                parent = FatherNodeRec(data, root.left);
+            }
+            if(parent != null)
+            {
+                return parent;
+            }
+            if(root.right != null)
+            {
+                if(root.right.data.CompareTo(data) == 0)
+                {
+                    parent = root;
+                    return parent;
+                }
+                parent = FatherNodeRec(data, root.right);
+            }
+            return parent;
         }
 
 
@@ -514,7 +535,6 @@ namespace BinarySearchTree
         {
             return Math.Abs(Height(root.left) - Height(root.right)) <= 1;
         }
-
 
         private int Height(Node<T> root)
         {
@@ -534,7 +554,6 @@ namespace BinarySearchTree
                 return Height(root.right) + 1;
         }
 
-
         private Node<T> RightRotation(Node<T> root)
         {
             if(root.left != null)
@@ -550,7 +569,6 @@ namespace BinarySearchTree
                 return null;
             }
         }
-
 
         private Node<T> LeftRotation(Node<T> root)
         {
@@ -568,7 +586,6 @@ namespace BinarySearchTree
             }
         }
 
-
         private Node<T> LeftRightRotation(Node<T> root)
         {
             root.left = LeftRotation(root.left);
@@ -576,14 +593,12 @@ namespace BinarySearchTree
             return root;
         }
 
-
         private Node<T> RightLeftRotation(Node<T> root)
         {
             root.right = RightRotation(root.right);
             root = LeftRotation(root);
             return root;
         }
-
 
         public Node<T> Balance(Node<T> root)
         {
