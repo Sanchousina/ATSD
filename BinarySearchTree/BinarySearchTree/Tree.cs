@@ -430,7 +430,6 @@ namespace BinarySearchTree
         }
 
         //It creates and returns a new BBST which is symmetrical to the original one
-        // оригинальное дерево тоже меняется - исправить
         public Tree<T> Symmetrical()
         {
             Tree<T> newTree = Copy();
@@ -527,6 +526,38 @@ namespace BinarySearchTree
                 parent = FatherNodeRec(data, root.right);
             }
             return parent;
+        }
+
+        //It returns the lowest common ancestor of the two nodes containing the argument keys.
+        public Node<T> CommonAncestor(T a, T b)
+        {
+            bool node1 = Search(a);
+            bool node2 = Search(b);
+
+            if(!node1 || !node2)
+            {
+                return null;
+            }
+            else
+            {               
+                return new Node<T>(CommonAncestorRec(a, b)); ;
+            }
+        }
+
+        private T CommonAncestorRec(T node1, T node2)
+        {
+            while(node1.CompareTo(node2) != 0)
+            {
+                if(node1.CompareTo(root.data) != 0)
+                {
+                    node1 = FatherNode(node1);
+                }
+                if(node2.CompareTo(root.data) != 0)
+                {
+                    node2 = FatherNode(node2);
+                }
+            }
+            return node1;
         }
 
 

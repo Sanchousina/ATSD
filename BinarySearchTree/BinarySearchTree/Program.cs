@@ -90,6 +90,8 @@ namespace BinarySearchTree
             Console.WriteLine();
 
             Console.WriteLine("The Father node of {0} is {1}", 9, original.FatherNode(9));
+            Console.WriteLine("Common ancestor of rhe nodes {0} and {1} is {2}", 
+                6, 4, original.CommonAncestor(6, 4).data);
 
             //Console.WriteLine(original.Search(7));
         }
