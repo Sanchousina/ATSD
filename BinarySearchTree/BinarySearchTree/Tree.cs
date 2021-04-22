@@ -229,6 +229,8 @@ namespace BinarySearchTree
 
                 root.right = Delete(root.right, root.data);
             }
+
+            root = Balance(root);
             return root;
         }
 
@@ -450,13 +452,61 @@ namespace BinarySearchTree
         }
 
 
-
         //It creates and returns a new BBST which is symmetrical to the original one
         public Tree<T> Symmetrical(Tree<T> tree)
         {
-            return tree;
+            Tree<T> newTree = new Tree<T>();
+            if(tree.root != null)
+            {
+                newTree.root = SymmetricalRec(tree.root);
+            }
+            return newTree;
         }
 
+        private Node<T> SymmetricalRec(Node<T> root)
+        {
+            if(root != null)
+            {
+                if(root.left == null)
+                {
+                    if(root.right == null)
+                        return root;
+                }
+                 if(root.left != null)
+                {
+                    if (root.right == null)
+                    {
+                        Node<T> temp = root.left;
+                        root.left = null;
+                        root.right = SymmetricalRec(temp);
+                    }                      
+                }
+                 if(root.right != null)
+                {
+                    if (root.left == null)
+                    {
+                        Node<T> temp = root.right;
+                        root.right = null;
+                        root.right = SymmetricalRec(temp);
+                    }
+                }
+                if(root.left != null && root.right != null)
+                {
+                    Node<T> temp = root.left;
+                    root.left = root.right;
+                    root.right = temp;
+
+                    root.left = SymmetricalRec(root.left);
+                    root.right = SymmetricalRec(temp);
+                }
+
+                return root;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
         // methods for AVL tree
