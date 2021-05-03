@@ -29,6 +29,11 @@ namespace HeapSort_lb3
             return last == -1;
         }
 
+        public int Size()
+        {
+            return last + 1;
+        }
+
         public void Print()
         {
             Console.WriteLine("List contents:");
