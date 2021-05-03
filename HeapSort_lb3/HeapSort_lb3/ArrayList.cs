@@ -23,5 +23,11 @@ namespace HeapSort_lb3
             last = -1;
             arr = new T[max];
         }
+
+        public bool isEmpty()
+        {
+            return last == -1;
+        }
+
     }
 }
