@@ -7,12 +7,21 @@ namespace HeapSort_lb3
     class ArrayList<T> where T: IComparable<T>
     {
         private T[] arr;
-        private int length;
+        private int max;
+        private int last;
         
         public ArrayList(T[] arr)
         {
             this.arr = arr;
-            length = arr.Length;
+            max = arr.Length;
+            last = arr.Length - 1;
+        }
+
+        public ArrayList(int n)
+        {
+            max = n;
+            last = -1;
+            arr = new T[max];
         }
     }
 }
