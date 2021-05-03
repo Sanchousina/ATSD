@@ -29,5 +29,18 @@ namespace HeapSort_lb3
             return last == -1;
         }
 
+        public void Print()
+        {
+            Console.WriteLine("List contents:");
+            if (last == -1) Console.WriteLine("Oops! List is empty(");
+            else
+            {
+                for (int i = 0; i <= last; ++i)
+                {
+                    Console.Write(arr[i] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
