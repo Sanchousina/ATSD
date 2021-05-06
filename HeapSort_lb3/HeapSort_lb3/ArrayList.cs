@@ -47,5 +47,32 @@ namespace HeapSort_lb3
                 Console.WriteLine();
             }
         }
+
+        public void HeapSort() { }
+
+        //algorithm for constructing maxheaps
+        private void Heapify(T[] arr, int n, int i)
+        {
+            int largest = i;
+            int l = 2 * i + 1;
+            int r = 2 * i + 2;
+
+            if (l < n && arr[l].CompareTo(arr[largest]) == 1)
+            {
+                largest = l;
+            }
+            if (r < n && arr[r].CompareTo(arr[largest]) == 1)
+            {
+                largest = r;
+            }
+            if (largest != i)
+            {
+                T swap = arr[i];
+                arr[i] = arr[largest];
+                arr[largest] = swap;
+
+                Heapify(arr, n, largest);
+            }
+        }
     }
 }
