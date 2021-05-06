@@ -1,0 +1,13 @@
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.exe
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.deps.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.runtimeconfig.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.runtimeconfig.dev.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\bin\Debug\netcoreapp3.1\HeapSort_lb3.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.csprojAssemblyReference.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.AssemblyInfoInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.AssemblyInfo.cs
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.csproj.CoreCompileInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\HeapSort_lb3\HeapSort_lb3\obj\Debug\netcoreapp3.1\HeapSort_lb3.genruntimeconfig.cache

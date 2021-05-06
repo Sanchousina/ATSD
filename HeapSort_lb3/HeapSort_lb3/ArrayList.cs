@@ -48,7 +48,24 @@ namespace HeapSort_lb3
             }
         }
 
-        public void HeapSort() { }
+        public void HeapSort()
+        {
+            int n = arr.Length;
+
+            for (int i = n / 2 - 1; i >= 0; i--)
+            {
+                Heapify(arr, n, i);
+            }
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                T temp = arr[0];
+                arr[0] = arr[i];
+                arr[i] = temp;
+
+                Heapify(arr, i, 0);
+            }
+        }
 
         //algorithm for constructing maxheaps
         private void Heapify(T[] arr, int n, int i)
