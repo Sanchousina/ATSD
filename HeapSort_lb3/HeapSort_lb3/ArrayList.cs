@@ -34,6 +34,53 @@ namespace HeapSort_lb3
             return last + 1;
         }
 
+        public void AddUnsorted(T item)
+        {
+            arr[last + 1] = item;
+            last++;
+        }
+
+        public int SearchForIndex(T item)
+        {
+            int k = -1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].CompareTo(item) == 0)
+                    k = i;
+            }
+            return k;
+        }
+
+        public object Delete(T item)
+        {
+            if (!isEmpty())
+            {
+                int k = SearchForIndex(item);
+
+                if (k == -1) Console.WriteLine("The element was not found");
+                else
+                {
+                    object dataReturned = arr[k];
+
+                    arr[k] = arr[last--];
+                    for (int i = k + 1; i < last + 1; i++)
+                    {
+                        T temp = arr[i];
+                        arr[i] = arr[k];
+                        arr[k] = temp;
+                        k++;
+                    }
+
+                    return dataReturned;
+                }
+            }
+            else
+
+                Console.WriteLine("List is empty");
+            return -1000;
+
+        }
+
         public void Print()
         {
             Console.WriteLine("List contents:");
@@ -90,6 +137,11 @@ namespace HeapSort_lb3
 
                 Heapify(arr, n, largest);
             }
+        }
+
+        public T DeleteTop()
+        {
+
         }
     }
 }
