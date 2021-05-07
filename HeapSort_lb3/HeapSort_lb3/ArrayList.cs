@@ -97,14 +97,14 @@ namespace HeapSort_lb3
 
         public void HeapSort()
         {
-            int n = arr.Length;
+            int n = last;
 
             for (int i = n / 2 - 1; i >= 0; i--)
             {
                 Heapify(arr, n, i);
             }
 
-            for (int i = n - 1; i > 0; i--)
+            for (int i = n; i > 0; i--)
             {
                 T temp = arr[0];
                 arr[0] = arr[i];
@@ -139,9 +139,26 @@ namespace HeapSort_lb3
             }
         }
 
-        public T DeleteTop()
+        public T DeleteTopOfMaxHeap()
         {
+            int n = last+1;
 
+            for (int i = n / 2; i >= 0; i--)
+            {
+                Heapify(arr, n, i);
+            }
+
+            T el = arr[0];
+            Delete(arr[0]);
+
+            n = last + 1;
+
+            for (int i = n / 2; i >= 0; i--)
+            {
+                Heapify(arr, n, i);
+            }
+
+            return el;
         }
     }
 }
