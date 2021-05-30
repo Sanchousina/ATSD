@@ -66,5 +66,14 @@ namespace ATSD_Lab4
             }
             return AdjacentVertices;
         }
+
+        public int GetEdgeWeight(int v1, int v2)
+        {
+            if (v1 > NumVertices || v2 > NumVertices || v1 < 0 || v2 < 0)
+            {
+                throw new ArgumentOutOfRangeException("Vertices are out of bounds");
+            }
+            return Matrix[v1, v2];
+        }
     }
 }
