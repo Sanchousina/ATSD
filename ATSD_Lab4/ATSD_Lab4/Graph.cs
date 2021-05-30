@@ -17,7 +17,18 @@ namespace ATSD_Lab4
                        - compareEdge.weight;
             }
         }
+
+        public class subset
+        {
+            public int parent;
+            public int rank;
+        }
+
         public int NumVertices { get; set; }
+
+        public int NumEdges { get; set; }
+
+        private Edge[] edges;
 
         public bool Directed = false;
 
@@ -58,6 +69,7 @@ namespace ATSD_Lab4
             {
                 Matrix[v2, v1] = weight;
             }
+            NumEdges++;
         }
 
         public List<int> GetAdjacentVertices(int v)
