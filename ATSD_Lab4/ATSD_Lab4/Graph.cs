@@ -48,5 +48,23 @@ namespace ATSD_Lab4
                 Matrix[v2, v1] = weight;
             }
         }
+
+        public List<int> GetAdjacentVertices(int v)
+        {
+            if(v < 0 || v >= NumVertices)
+            {
+                throw new ArgumentOutOfRangeException("Cannot acces the vertex");
+            }
+
+            List<int> AdjacentVertices = new List<int>();
+            for(int i = 0; i < NumVertices; i++)
+            {
+                if(Matrix[v,i] > 0)
+                {
+                    AdjacentVertices.Add(v);
+                }
+            }
+            return AdjacentVertices;
+        }
     }
 }
