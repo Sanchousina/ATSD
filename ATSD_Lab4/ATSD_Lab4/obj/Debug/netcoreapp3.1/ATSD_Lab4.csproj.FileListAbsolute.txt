@@ -1,0 +1,13 @@
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.exe
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.deps.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.runtimeconfig.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.runtimeconfig.dev.json
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\bin\Debug\netcoreapp3.1\ATSD_Lab4.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.csprojAssemblyReference.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.AssemblyInfoInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.AssemblyInfo.cs
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.csproj.CoreCompileInputs.cache
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.dll
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.pdb
+F:\Сашина папка\хнурэ\АТСД\labs\lab2\ATSD_Lab4\ATSD_Lab4\obj\Debug\netcoreapp3.1\ATSD_Lab4.genruntimeconfig.cache

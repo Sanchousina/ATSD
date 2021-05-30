@@ -6,7 +6,7 @@ namespace ATSD_Lab4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
