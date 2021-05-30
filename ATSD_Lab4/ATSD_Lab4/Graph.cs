@@ -75,5 +75,17 @@ namespace ATSD_Lab4
             }
             return Matrix[v1, v2];
         }
+
+        public void RemoveEdge(int v1, int v2)
+        {
+            if (v1 > NumVertices || v2 > NumVertices || v1 < 0 || v2 < 0)
+            {
+                throw new ArgumentOutOfRangeException("Vertices are out of bounds");
+            }
+            if(Matrix[v1, v2] > 0)
+            {
+                Matrix[v1, v2] = 0;
+            }
+        }
     }
 }
