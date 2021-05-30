@@ -6,7 +6,7 @@ namespace ATSD_Lab4
 {
     class Graph
     {
-        class Edge : IComparable<Edge>
+        public class Edge : IComparable<Edge>
         {
             public int from;
             public int to;
@@ -28,7 +28,7 @@ namespace ATSD_Lab4
 
         public int NumEdges { get; set; }
 
-        private Edge[] edges;
+        public Edge[] edges { get; set; }
 
         public bool Directed = false;
 
@@ -39,6 +39,17 @@ namespace ATSD_Lab4
             NumVertices = numVertices;
 
             GenerateEmptyMatrix(numVertices);
+        } 
+
+        Graph(int v, int e)
+        {
+            NumVertices = v;
+            NumEdges = e;
+            edges = new Edge[NumEdges];
+            for (int i = 0; i < e; ++i)
+            {
+                edges[i] = new Edge();
+            }              
         }
 
         private void GenerateEmptyMatrix(int num)
