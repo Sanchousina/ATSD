@@ -31,5 +31,22 @@ namespace ATSD_Lab4
                 }
             }
         }
+
+        public void AddEdge(int v1, int v2, int weight = 1)
+        {
+            if(v1 > NumVertices || v2 > NumVertices || v1 < 0 || v2 < 0)
+            {
+                throw new ArgumentOutOfRangeException("Vertices are out of bounds");
+            }
+            if(weight < 1)
+            {
+                throw new ArgumentException("Weight cannot be less than 1");
+            }
+            Matrix[v1, v2] = weight;
+            if (!Directed)
+            {
+                Matrix[v2, v1] = weight;
+            }
+        }
     }
 }
