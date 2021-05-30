@@ -6,6 +6,17 @@ namespace ATSD_Lab4
 {
     class Graph
     {
+        class Edge : IComparable<Edge>
+        {
+            public int from;
+            public int to;
+            public int weight;
+            public int CompareTo(Edge compareEdge)
+            {
+                return this.weight
+                       - compareEdge.weight;
+            }
+        }
         public int NumVertices { get; set; }
 
         public bool Directed = false;
