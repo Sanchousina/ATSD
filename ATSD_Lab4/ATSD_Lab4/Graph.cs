@@ -34,7 +34,7 @@ namespace ATSD_Lab4
 
         public void AddEdge(int v1, int v2, int weight = 1)
         {
-            if(v1 > NumVertices || v2 > NumVertices || v1 < 0 || v2 < 0)
+            if(v1 >= NumVertices || v2 >= NumVertices || v1 < 0 || v2 < 0)
             {
                 throw new ArgumentOutOfRangeException("Vertices are out of bounds");
             }
@@ -100,6 +100,59 @@ namespace ATSD_Lab4
                 Console.WriteLine();
             }
             Console.WriteLine("**************************");
+        }
+
+        public void Dijkstra(int src)
+        {
+            int[] dist = new int[NumVertices];
+            bool[] spt = new bool[NumVertices];
+
+            for(int i = 0; i < NumVertices; i++)
+            {
+                dist[i] = int.MaxValue; //infinity
+                spt[i] = false;
+            }
+
+            dist[src] = 0;
+
+            for(int i = 0; i < NumVertices-1; i++)
+            {
+                int u = MinDistance(dist, spt);
+
+                spt[u] = true;
+
+                for (int v = 0; v < NumVertices; v++)
+                {
+                    if(!spt[v] && Matrix[u,v] != 0 && dist[u] != int.MaxValue
+                        && dist[u] + Matrix[u,v] < dist[v])
+                    {
+                        dist[v] = dist[u] + Matrix[u, v];
+                    }
+                }
+
+                PrintDijkstra(dist);
+            }
+        }
+
+        private void PrintDijkstra(int[] dist)
+        {
+
+        }
+
+        private int MinDistance(int[] dist, bool[] spt)
+        {
+            int min = int.MaxValue;
+            int min_index = -1;
+
+            for(int v = 0; v < NumVertices; v++)
+            {
+                if(spt[v] == false && dist[v] <= min)
+                {
+                    min = dist[v];
+                    min_index = v;
+                }
+            }
+            return min_index;
         }
     }
 }
