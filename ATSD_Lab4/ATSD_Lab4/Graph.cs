@@ -87,5 +87,19 @@ namespace ATSD_Lab4
                 Matrix[v1, v2] = 0;
             }
         }
+
+        public void PrintMatrix()
+        {
+            Console.WriteLine("**************************");
+            for(int i = 0; i < NumVertices; i++)
+            {
+                for(int j = 0; j < NumVertices; j++)
+                {
+                    Console.Write(Matrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("**************************");
+        }
     }
 }
