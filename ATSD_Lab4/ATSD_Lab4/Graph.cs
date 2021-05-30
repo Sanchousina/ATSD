@@ -129,14 +129,16 @@ namespace ATSD_Lab4
                         dist[v] = dist[u] + Matrix[u, v];
                     }
                 }
-
-                PrintDijkstra(dist);
             }
+            PrintDijkstra(dist, src);
         }
 
-        private void PrintDijkstra(int[] dist)
+        private void PrintDijkstra(int[] dist, int src)
         {
-
+            Console.Write("Vertex \t\t Distance "
+                      + "from Source: {0}\n", src );
+            for (int i = 0; i < NumVertices; i++)
+                Console.Write(i + " \t\t " + dist[i] + "\n");
         }
 
         private int MinDistance(int[] dist, bool[] spt)
