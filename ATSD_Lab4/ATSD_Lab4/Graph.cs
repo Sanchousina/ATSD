@@ -190,5 +190,87 @@ namespace ATSD_Lab4
             }
             return min_index;
         }
+
+        private int Find(subset[] subsets, int i)
+        {
+            if (subsets[i].parent != i)
+            {
+                subsets[i].parent = Find(subsets, subsets[i].parent);
+            }
+
+            return subsets[i].parent;
+        }
+
+        private void Union(subset[] subsets, int x, int y)
+        {
+            int xroot = Find(subsets, x);
+            int yroot = Find(subsets, y);
+
+            if (subsets[xroot].rank < subsets[yroot].rank)
+                subsets[xroot].parent = yroot;
+            else if (subsets[xroot].rank > subsets[yroot].rank)
+                subsets[yroot].parent = xroot;
+
+            else
+            {
+                subsets[yroot].parent = xroot;
+                subsets[xroot].rank++;
+            }
+        }
+
+        public void Kruskal()
+        {
+            Edge[] result = new Edge[NumVertices];
+            int e = 0; 
+            int i = 0;
+            for (i = 0; i < NumVertices; ++i)
+                result[i] = new Edge();
+
+            Array.Sort(edges);
+
+            subset[] subsets = new subset[NumVertices];
+            for (i = 0; i < NumVertices; ++i)
+            {
+                subsets[i] = new subset();
+            }
+
+            for (int v = 0; v < NumVertices; ++v)
+            {
+                subsets[v].parent = v;
+                subsets[v].rank = 0;
+            }
+
+            i = 0;
+
+            while (e < NumVertices - 1)
+            {
+                Edge next_edge = new Edge();
+                next_edge = edges[i++];
+
+                int x = Find(subsets, next_edge.from);
+                int y = Find(subsets, next_edge.to);
+
+                if (x != y)
+                {
+                    result[e++] = next_edge;
+                    Union(subsets, x, y);
+                }
+            }
+
+            Console.WriteLine("MST:");
+
+            int minimumCost = 0;
+            for (i = 0; i < e; ++i)
+            {
+                Console.WriteLine(result[i].from + " -- "
+                                  + result[i].to
+                                  + " == " + result[i].weight);
+                minimumCost += result[i].weight;
+            }
+
+            Console.WriteLine("Minimum Cost Spanning Tree"
+                              + minimumCost);
+        }
+
     }
 }
